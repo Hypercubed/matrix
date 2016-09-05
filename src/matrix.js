@@ -12,6 +12,7 @@ class Matrix extends Array {
      */
     constructor(nRows, nColumns) {
         if (Matrix.isMatrix(nRows)) {
+            super(nRows);
             return nRows.clone();
         } else if (Number.isInteger(nRows) && nRows > 0) { // Create an empty matrix
             super(nRows);
