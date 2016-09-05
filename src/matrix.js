@@ -7,7 +7,9 @@ var util = require('./util');
 class Matrix extends abstractMatrix(Array) {
     constructor(nRows, nColumns) {
         if (arguments.length === 1 && typeof nRows === 'number') {
-            return new Array(nRows);
+            nRows = nRows.clone();
+            super(nRows)
+            return nRows;
         }
         if (Matrix.isMatrix(nRows)) {
             return nRows.clone();
